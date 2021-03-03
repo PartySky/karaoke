@@ -41,7 +41,7 @@ export class PlayerComponent implements OnInit {
         },
         {
           tick: 9,
-          duration: 3,
+          duration: 7,
           transitionDuration: 0,
           value: 'better'
         },
