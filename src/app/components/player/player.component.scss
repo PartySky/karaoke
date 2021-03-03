@@ -33,7 +33,10 @@ $img-base-path: "../../../../fonts/webfonts_Macromedia/";
   font-size: 65px;
   color: $color_1;
   -webkit-text-stroke: 3px $color_strock; /* width and color */
-  //text-shadow: 1px 1px 2px black, 0 0 1em #016eff;
+}
+
+.shadowed {
+  text-shadow: 1px 1px 2px black, 0 0 1em #016eff;
 }
 
 .animated {
@@ -49,7 +52,27 @@ $img-base-path: "../../../../fonts/webfonts_Macromedia/";
   -webkit-text-fill-color: transparent;
   background-size: 200% 100%;
   background-position: 100%;
-  transition: background-position 2750ms ease;
+  //transition: background-position 275ms ease;
+
+  //transition: background-position 750ms ease;
+  text-decoration: none; // text decorations are clipped in WebKit browsers
+  &:hover {
+    background-position: 0 100%;
+  }
+}
+
+.gradiented {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  color: red;
+  overflow: hidden;
+    background: linear-gradient(to right, green, yellow 50%, royalblue 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 0 100%;
   text-decoration: none; // text decorations are clipped in WebKit browsers
   &:hover {
     background-position: 0 100%;

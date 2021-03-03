@@ -13,17 +13,20 @@ export class PlayerComponent implements OnInit {
       words: [
         {
           tick: 1,
-          duration: 1,
+          duration: 5,
+          transitionDuration: 0,
           value: 'You better do what you want'
         },
         {
-          tick: 2,
+          tick: 6,
           duration: 1,
+          transitionDuration: 0,
           value: 'Two'
         },
         {
-          tick: 3,
+          tick: 7,
           duration: 1,
+          transitionDuration: 0,
           value: 'Three'
         },
       ]
@@ -31,18 +34,21 @@ export class PlayerComponent implements OnInit {
     {
       words: [
         {
-          tick: 4,
+          tick: 8,
           duration: 1,
+          transitionDuration: 0,
           value: 'You'
         },
         {
-          tick: 5,
-          duration: 1,
+          tick: 9,
+          duration: 3,
+          transitionDuration: 0,
           value: 'better'
         },
         {
-          tick: 6,
+          tick: 15,
           duration: 1,
+          transitionDuration: 0,
           value: 'do what you want'
         },
       ]
@@ -57,6 +63,7 @@ export class PlayerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.setTransitionDurations();
     //emit value in sequence every 10 second
     const source = interval(1 * 1000);
     this.subscription = source.subscribe(val => {
@@ -76,4 +83,15 @@ debugger;
     this.tickCounter++;
   }
 
+  private setTransitionDurations(): void {
+    this.lines.forEach(item => {
+      item.words.forEach(word => {
+        word.transitionDuration = this.getTransitionDuration(word.duration);
+      })
+    });
+  }
+
+  private getTransitionDuration(duration: number) {
+    return (duration * 2 + 0.1) * 250;
+  }
 }
