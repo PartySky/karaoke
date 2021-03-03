@@ -1,0 +1,26 @@
+.colored {
+  //color: yellow !important;
+  color: #01eaff !important;
+}
+
+$img-base-path: "../../../../fonts/webfonts_Macromedia/";
+
+@font-face {
+  font-family: 'Macromedia';
+  src:url($img-base-path + 'Macromedia.ttf.woff') format('woff'),
+  url($img-base-path + 'Macromedia.ttf.svg#Macromedia') format('svg'),
+  url($img-base-path + 'Macromedia.ttf.eot'),
+  url($img-base-path + 'Macromedia.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.custom_font {
+  font-family: 'Macromedia';
+  display: inline-block;
+  transform: scale(1,1.2);
+  font-size: 65px;
+  color: #d4d3d2;
+  -webkit-text-stroke: 3px #016eff; /* width and color */
+  text-shadow: 1px 1px 2px black, 0 0 1em #016eff;
+}

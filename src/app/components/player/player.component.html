@@ -1,0 +1,8 @@
+<div>{{tickCounter}}</div>
+
+<div *ngFor="let item of lines ">
+  <div *ngFor="let word of item.words">
+    <div class="custom_font"
+      [ngClass]="{colored: word.tick < tickCounter}">{{word.value}}</div>
+  </div>
+</div>
