@@ -8,49 +8,80 @@ import { interval, Subscription } from 'rxjs';
   styleUrls: ['./player.component.scss']
 })
 export class PlayerComponent implements OnInit {
+  delay = 5;
   lines: Line[] = [
     {
       words: [
         {
-          tick: 1,
+          tick: this.delay + 1,
+          duration: 1,
+          transitionDuration: 0,
+          value: 'Gonna'
+        },
+        {
+          tick: this.delay + 2,
           duration: 5,
           transitionDuration: 0,
-          value: 'You better do what you want'
+          value: 'rock'
         },
         {
-          tick: 6,
+          tick: this.delay + 7,
           duration: 1,
           transitionDuration: 0,
-          value: 'Two'
-        },
-        {
-          tick: 7,
-          duration: 1,
-          transitionDuration: 0,
-          value: 'Three'
+          value: ''
         },
       ]
     },
     {
       words: [
         {
-          tick: 8,
+          tick: this.delay + 8,
           duration: 1,
           transitionDuration: 0,
-          value: 'You'
+          value: 'The'
         },
         {
-          tick: 9,
+          tick: this.delay + 9,
           duration: 7,
           transitionDuration: 0,
-          value: 'better'
+          value: 'music'
         },
         {
-          tick: 15,
+          tick: this.delay + 15,
+          duration: 0.1,
+          transitionDuration: 0,
+          value: 'is'
+        },
+        {
+          tick: this.delay + 15,
+          duration: 0.5,
+          transitionDuration: 0,
+          value: 'my'
+        },
+        {
+          tick: this.delay + 15,
           duration: 1,
           transitionDuration: 0,
-          value: 'do what you want'
+          value: 'soul'
         },
+        // {
+        //   tick: this.delay + 15,
+        //   duration: 1,
+        //   transitionDuration: 0,
+        //   value: 'I keep'
+        // },
+        // {
+        //   tick: this.delay + 15,
+        //   duration: 1,
+        //   transitionDuration: 0,
+        //   value: 'the'
+        // },
+        // {
+        //   tick: this.delay + 15,
+        //   duration: 1,
+        //   transitionDuration: 0,
+        //   value: 'sound'
+        // },
       ]
     }
   ];

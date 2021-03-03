@@ -1,21 +1,22 @@
-<!--<iframe style="position: fixed; z-index: -99; width: 100%; height: 100%"-->
-<!--        src="https://www.youtube.com/embed/ofPqpyjKLNQ?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"-->
-<!--        width="560"-->
-<!--        height="315"-->
-<!--        frameborder="0"-->
-<!--        allowfullscreen>-->
-<!--</iframe>-->
+<iframe style="position: fixed; z-index: -99; width: 100%; height: 100%"
+        src="https://www.youtube.com/embed/ePJ66eiqgJw?start=177&rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
+        width="560"
+        height="315"
+        frameborder="0"
+        allowfullscreen>
+</iframe>
 
 <div class="animated custom_font gradiented">{{tickCounter}}</div>
-
-<div *ngFor="let item of lines ">
-  <div *ngFor="let word of item.words">
-    <div class="animated custom_font"
-      [ngClass]="{colored: word.tick < tickCounter}"
-      [ngStyle]="{'transition': 'background-position ' + word.transitionDuration + 'ms ease'}">{{word.value}}</div>
+<div class="text_wrapper">
+  <div *ngFor="let item of lines"
+       class="line">
+    <div *ngFor="let word of item.words">
+      <div class="animated custom_font"
+        [ngClass]="{colored: word.tick < tickCounter}"
+        [ngStyle]="{'transition': 'background-position ' + word.transitionDuration + 'ms ease'}">{{word.value}}&nbsp;</div>
+    </div>
   </div>
+
+<!--  <div class="animated custom_font gradiented">Animated Hover</div>-->
 </div>
-
-<div class="animated custom_font gradiented">Animated Hover</div>
-
 

@@ -1,12 +1,17 @@
-// Cool blue
-//$color_1: #d4d3d2;
-//$color_2: #01eaff;
-//$color_strock: #016eff;
+$color_1: #d4d3d2;
+$color_2: #01eaff;
+$color_strock: #016eff;
 
-// Tarantinish
-$color_1: #fff;
-$color_2: #ffb200;
-$color_strock: #000;
+@if 1 + 1 == 2 {
+   //Cool blue
+  //$color_1: #d4d3d2;
+  //$color_2: #01eaff;
+  //$color_strock: #016eff;
+}
+//// Tarantinish
+//$color_1: #fff;
+//$color_2: #ffb200;
+//$color_strock: #000;
 
 
 .colored {
@@ -77,4 +82,25 @@ $img-base-path: "../../../../fonts/webfonts_Macromedia/";
   &:hover {
     background-position: 0 100%;
   }
+}
+
+.text_wrapper {
+  position: fixed;
+  top: 650px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  width: 100%;
+  background: #0000005c;
+  min-height: 500px;
+}
+
+.line {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-left: auto;
+  flex-direction: row;
 }
