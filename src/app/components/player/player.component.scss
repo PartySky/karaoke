@@ -1,6 +1,17 @@
+// Cool blue
+//$color_1: #d4d3d2;
+//$color_2: #01eaff;
+//$color_strock: #016eff;
+
+// Tarantinish
+$color_1: #fff;
+$color_2: #ffb200;
+$color_strock: #000;
+
+
 .colored {
-  //color: yellow !important;
-  color: #01eaff !important;
+  //color: $color_2 !important;
+  background-position: 0 100% !important;
 }
 
 $img-base-path: "../../../../fonts/webfonts_Macromedia/";
@@ -20,7 +31,27 @@ $img-base-path: "../../../../fonts/webfonts_Macromedia/";
   display: inline-block;
   transform: scale(1,1.2);
   font-size: 65px;
-  color: #d4d3d2;
-  -webkit-text-stroke: 3px #016eff; /* width and color */
-  text-shadow: 1px 1px 2px black, 0 0 1em #016eff;
+  color: $color_1;
+  -webkit-text-stroke: 3px $color_strock; /* width and color */
+  //text-shadow: 1px 1px 2px black, 0 0 1em #016eff;
+}
+
+.animated {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  color: red;
+  overflow: hidden;
+  //  background: linear-gradient(to right, green, yellow 50%, royalblue 50%);
+  background: linear-gradient(to right, $color_2, $color_2 50%, $color_1 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 2750ms ease;
+  text-decoration: none; // text decorations are clipped in WebKit browsers
+  &:hover {
+    background-position: 0 100%;
+  }
 }

@@ -2,7 +2,9 @@
 
 <div *ngFor="let item of lines ">
   <div *ngFor="let word of item.words">
-    <div class="custom_font"
+    <div class="animated custom_font"
       [ngClass]="{colored: word.tick < tickCounter}">{{word.value}}</div>
   </div>
 </div>
+
+<div class="animated custom_font">Animated Hover</div>
