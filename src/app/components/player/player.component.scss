@@ -1,17 +1,27 @@
-$color_1: #d4d3d2;
-$color_2: #01eaff;
-$color_strock: #016eff;
+$color_1: #ffb200;
+$color_2: red;
+$color_strock: #000;
+$new_line_color: #d4d3d2;
 
-@if 1 + 1 == 2 {
-   //Cool blue
-  //$color_1: #d4d3d2;
-  //$color_2: #01eaff;
-  //$color_strock: #016eff;
+$color_scheme: 2;
+
+@if $color_scheme == 1 {
+  // Cool blue
+  $color_1: #d4d3d2;
+  $color_2: #01eaff;
+  $color_strock: #016eff;
+  $new_line_color: #d4d3d2;
 }
-//// Tarantinish
-//$color_1: #fff;
-//$color_2: #ffb200;
-//$color_strock: #000;
+@if $color_scheme == 2 {
+  // Tarantinish 01
+  $color_1: #ffb200;
+  $color_2: red;
+  $color_strock: #000;
+  $new_line_color: #d4d3d2;
+}
+@if $color_scheme == 3 {
+  // Default
+}
 
 
 .colored {
@@ -19,14 +29,27 @@ $color_strock: #016eff;
   background-position: 0 100% !important;
 }
 
-$img-base-path: "../../../../fonts/webfonts_Macromedia/";
+//$img-base-path: "../../../../fonts/webfonts_Macromedia/";
+$img-base-path: "../../../../fonts/test/";
 
 @font-face {
   font-family: 'Macromedia';
-  src:url($img-base-path + 'Macromedia.ttf.woff') format('woff'),
-  url($img-base-path + 'Macromedia.ttf.svg#Macromedia') format('svg'),
-  url($img-base-path + 'Macromedia.ttf.eot'),
-  url($img-base-path + 'Macromedia.ttf.eot?#iefix') format('embedded-opentype');
+
+  //  src:url($img-base-path + 'Macromedia.ttf.woff') format('woff'),
+  //  url($img-base-path + 'Macromedia.ttf.svg#Macromedia') format('svg'),
+  //  url($img-base-path + 'Macromedia.ttf.eot'),
+  //  url($img-base-path + 'Macromedia.ttf.eot?#iefix') format('embedded-opentype');
+
+  src:url($img-base-path + 'Macromedia.woff') format('woff'),
+  url($img-base-path + 'Macromedia.svg') format('svg'),
+  url($img-base-path + 'Macromedia.eot'),
+  url($img-base-path + 'Macromedia.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.your-style {
+  font-family: 'Macromedia';
   font-weight: normal;
   font-style: normal;
 }
@@ -50,7 +73,6 @@ $img-base-path: "../../../../fonts/webfonts_Macromedia/";
   font-weight: 800;
   color: red;
   overflow: hidden;
-  //  background: linear-gradient(to right, green, yellow 50%, royalblue 50%);
   background: linear-gradient(to right, $color_2, $color_2 50%, $color_1 50%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -103,4 +125,26 @@ $img-base-path: "../../../../fonts/webfonts_Macromedia/";
   align-items: center;
   margin-left: auto;
   flex-direction: row;
+  min-height: 100px;
+}
+
+.new_line {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  color: red;
+  overflow: hidden;
+  background: linear-gradient(to right, $color_2, $color_2 50%, $new_line_color 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  //transition: background-position 275ms ease;
+
+  //transition: background-position 750ms ease;
+  text-decoration: none; // text decorations are clipped in WebKit browsers
+  &:hover {
+    background-position: 0 100%;
+  }
 }
