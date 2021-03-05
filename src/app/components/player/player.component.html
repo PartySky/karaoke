@@ -7,16 +7,35 @@
 </iframe>
 
 <div class="animated custom_font gradiented">{{tickCounter}}</div>
+
 <div class="text_wrapper">
-  <div *ngFor="let item of lines"
-       class="line">
-    <div *ngFor="let word of item.words">
+<!--  <div *ngFor="let item of lines"-->
+<!--       class="line">-->
+<!--    <div *ngFor="let word of item.words">-->
+<!--      <div class="animated custom_font"-->
+<!--        [ngClass]="{colored: word.tick < tickCounter}"-->
+<!--        [ngStyle]="{'transition': 'background-position ' + word.transitionDuration + 'ms ease'}">{{word.value}}&nbsp;-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <div class="line">
+    <div *ngFor="let word of line0.words">
       <div class="animated custom_font"
-        [ngClass]="{colored: word.tick < tickCounter}"
-        [ngStyle]="{'transition': 'background-position ' + word.transitionDuration + 'ms ease'}">{{word.value}}&nbsp;</div>
+           [ngClass]="{colored: word.tick < tickCounter, new_line: line0.startTick > tickCounter}"
+           [ngStyle]="{'transition': 'background-position ' + word.transitionDuration + 'ms ease'}">{{word.value}}&nbsp;
+      </div>
     </div>
   </div>
+<!--  [ngClass]="{new_line: line0.startTick < tickCounter}"-->
 
-<!--  <div class="animated custom_font gradiented">Animated Hover</div>-->
+  <div class="line">
+    <div *ngFor="let word of line1.words">
+      <div class="animated custom_font"
+           [ngClass]="{colored: word.tick < tickCounter, new_line: line1.startTick > tickCounter}"
+           [ngStyle]="{'transition': 'background-position ' + word.transitionDuration + 'ms ease'}">{{word.value}}&nbsp;
+      </div>
+    </div>
+  </div>
 </div>
 
