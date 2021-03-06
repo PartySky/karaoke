@@ -1,0 +1,21 @@
+<div *ngIf="isEditorShown"
+     class="wrapper">
+  <div class="cursor"
+       [style.left]="getCursorPosition() + 'px'"></div>
+
+  <div *ngFor="let item of lines"
+       class="line">
+    <div *ngFor="let word of item.words">
+      <div class="word"
+           [style.left]="getNotePosition(word) + 'px'"
+           [style.width]="getNoteWidth(word) + 'px'">{{word.value}}&nbsp;
+      </div>
+    </div>
+  </div>
+</div>
+<div (click)="toggleEditor()"
+     class="editor_btn">Show editor</div>
+<div class="zoom_btn_wrapper">
+  <div (click)="zoomIn()" >Zoom In</div>
+  <div (click)="zoomOut()" >Zoom Out</div>
+</div>

@@ -108,12 +108,12 @@ export class PlayerComponent implements OnInit {
           transitionDuration: 0,
           value: 'Ей'
         },
-        // {
-        //   tick: this.delay + 38,
-        //   duration: 7,
-        //   transitionDuration: 0,
-        //   value: ', как'
-        // },
+        {
+          tick: this.delay + 38,
+          duration: 7,
+          transitionDuration: 0,
+          value: ', как'
+        },
         {
           tick: this.delay + 45,
           duration: 0.1,
