@@ -12,6 +12,7 @@ export class PlayerComponent implements OnInit {
   delay = 5;
   nextLinePosition = 0;
   currentLinePosition = 0;
+  durationFactor = 1600;
 
   line0: Line = {endTick: 0, startTick: 0, words: [], position: 0};
   line1: Line = {endTick: 0, startTick: 0, words: [], position: 0};
@@ -219,8 +220,8 @@ debugger;
   }
 
   private getTransitionDuration(duration: number) {
-    return (duration * 2 + 0.1) * 250;
-    // return duration;
+    // return (duration * 2 + 0.1) * 750;
+    return duration * this.durationFactor;
   }
 
   private setLinesTicks() {
