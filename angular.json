@@ -31,7 +31,8 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/static_files/README.md"
             ],
             "styles": [
               "src/styles.scss"

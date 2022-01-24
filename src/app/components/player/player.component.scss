@@ -55,6 +55,9 @@ $img-base-path: "../../../../fonts/test/";
 }
 
 .custom_font {
+  //font height hotfix
+  margin-top: -116px;
+
   font-family: 'Macromedia';
   display: inline-block;
   transform: scale(1,1.2);
@@ -147,4 +150,18 @@ $img-base-path: "../../../../fonts/test/";
   &:hover {
     background-position: 0 100%;
   }
+}
+
+.loader_btn {
+  background: grey;
+  position: absolute;
+  bottom: 0px;
+  right: 300px;
+}
+
+.reset_ticks_btn {
+  background: grey;
+  position: absolute;
+  bottom: 0px;
+  right: 600px;
 }

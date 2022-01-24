@@ -12,12 +12,15 @@ export class EditorComponent implements OnInit {
   tickCounter: number = 0;
   @Input()
   lines: Line[] = [];
-  scaleFactor = 100;
+  scaleFactor = 0.1;
   isEditorShown = true;
 
   constructor() { }
 
   ngOnInit(): void {
+    let x = JSON.parse(<string>localStorage.getItem('zoom'));
+    if (!x) { return; }
+    this.scaleFactor = x;
   }
 
   getCursorPosition() {
@@ -25,7 +28,7 @@ export class EditorComponent implements OnInit {
   }
 
   getNotePosition(word: Word) {
-    return word.tick * this.scaleFactor;
+    return word.ticks * this.scaleFactor;
   }
 
   getNoteWidth(word: Word) {
@@ -38,9 +41,15 @@ export class EditorComponent implements OnInit {
 
   zoomIn() {
     this.scaleFactor = this.scaleFactor * 1.2;
+    this.storeZoomValue();
   }
 
   zoomOut() {
     this.scaleFactor = this.scaleFactor / 1.2;
+    this.storeZoomValue();
+  }
+
+  storeZoomValue() {
+    localStorage.setItem('zoom', JSON.stringify(this.scaleFactor));
   }
 }

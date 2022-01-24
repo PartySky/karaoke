@@ -6,9 +6,18 @@
   <div *ngFor="let item of lines"
        class="line">
     <div *ngFor="let word of item.words">
-      <div class="word"
+<!--      <div class="word"-->
+<!--           [style.left]="getNotePosition(word) + 'px'"-->
+<!--           [style.width]="getNoteWidth(word) + 'px'">{{word.value}}&nbsp;-->
+<!--      </div>-->
+
+      <div type="text"
+           class="word"
            [style.left]="getNotePosition(word) + 'px'"
-           [style.width]="getNoteWidth(word) + 'px'">{{word.value}}&nbsp;
+           [style.width]="getNoteWidth(word) + 'px'">
+        <input
+
+               [(ngModel)]="word.value">&nbsp;{{word.ticks}}
       </div>
     </div>
   </div>
